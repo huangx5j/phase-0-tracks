@@ -1,0 +1,12 @@
+section#contact-info {
+	font-size:.8em;
+}
+
+.job {
+  padding: 10px 30px; /*width, length*/
+  border-radius: 20px; /*rounded border*/
+  background-color: #e9e5dc;
+  margin-top: 30px;
+  margin-bottom: 30px;
+
+}
