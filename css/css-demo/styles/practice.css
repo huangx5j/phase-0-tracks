@@ -1,12 +1,20 @@
 section#contact-info {
-	font-size:.8em;
+	font-size: .8em;
 }
 
 .job {
-  padding: 10px 30px; /*width, length*/
-  border-radius: 20px; /*rounded border*/
-  background-color: #e9e5dc;
-  margin-top: 30px;
-  margin-bottom: 30px;
+	background-color: #e9e5dc;
+	border-radius: 20px;
+	padding: 10px 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
 
+.list {
+	font-size: .8em;
+}
+/* Our example of how to select a child element*/
+
+#work-experience .job .list .featured {
+	font-size: 5em;
 }
