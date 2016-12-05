@@ -7,9 +7,9 @@
 #hat-photo {
 	/*positioned relative to the nearest positioned ancestor*/
 	position: absolute; 
-    left: 170px;
-    top: 30px;
-    z-index: 0; 
+	left: 170px;
+	top: 30px;
+	z-index: 0; 
 }
 
 #glasses-photo {
@@ -21,10 +21,10 @@
 }
 
 #octopus-photo {
-    position: absolute;
+	position: absolute;
 	top: 100px;
 	left: 200px;
-    z-index:-1; /*set photo behind other photos*/
+	z-index:-1; /*set photo behind other photos*/
 }
 
 
