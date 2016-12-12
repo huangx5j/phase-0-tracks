@@ -1,3 +1,4 @@
+# #Checking if employees are vampires through series of questions
 puts "How many employees?"
 employees=gets.chomp().to_i
 
@@ -50,7 +51,7 @@ until employees ==0
   
   #if employee has a vampire name, overwrite result
   if name == "Drake Cula" || name == "Tu Fang" 
-    result = "Em loyee #{i}:Definitely a vampire."
+    result = "Employee #{i}:Definitely a vampire."
   end
 
   allergies = ""
@@ -58,8 +59,8 @@ until employees ==0
     puts "Employee #{i}: Please list any allergies you may have. Type 'done' when finished."
     allergies = gets.chomp.downcase
     if allergies == "sunshine"
-      result = "Employee #{i}:Probably a vampire."
-      break 
+      result = "Employee #{i}: Probably a vampire."
+      break #if allergic to sunshine, closes survey for this person and identify as vampire or move on to next employee. 
     end
     if allergies == "done"
       break
@@ -70,3 +71,6 @@ until employees ==0
   employees -= 1
   i+=1
 end
+
+#Plot twist message
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
