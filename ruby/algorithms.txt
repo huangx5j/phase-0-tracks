@@ -1,0 +1,50 @@
+Elevator algorithm
+
+-Travel in the single direction until the last request in that direction.
+-If there is no request, stop and proceed towards other direction, if there is any request from other direction.
+
+While next queue
+IF not full speed THEN move
+ELSE stop
+
+While destination
+IF call is > or < current floor add to queue
+ELSE if call == current floor
+	open door and close door
+ELSE
+	move
+
+MOVE
+WHILE queue
+	IF next floor > current floor THEN
+		MOVE up
+	ELSE IF next floor  < current floor THEN
+		MOVE down
+	ELSE IF no floor in current THEN
+		current = next
+ELSE
+	STOP
+
+SlowDown
+IF going up at full speed
+	IF only 1 floor away from the lowest destination floor slow down
+END
+ELSE going down at full speed
+	IF only 1 floor away from the highest destination floor slow down
+END
+END
+
+
+Prepping and cooking meat
+1. Tear off plastic from package
+2. Take meat out of package
+3. Put meat on cutting board.
+4. Use knife to cut meat into strips.
+5. Season meat with salt and pepper.
+6. Light stove to 350 degrees
+UNTIL stove==350
+7. Put meat on frying pan.
+8. Put pan on stove.
+WHILE MEAT==raw
+9. Stir meat until cooked brown.
+10. Transfer meat on plate and serve.
