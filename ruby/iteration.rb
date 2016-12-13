@@ -54,3 +54,24 @@ def filter1
 end
 
 filter1 {|val| puts "After filtering: #{val}"}
+
+#method that filters a data structure for only items satisfying a certain condition  
+def filter2
+  values=[1,3,4,5,6,7,8]
+  names={bob:"miller", ben:"smith", billy:"anderson"}
+  puts "Before array element deleting: #{values}"
+  puts "Before hash element deleting: #{names}"
+  
+  emptyarr=[]
+  values.each_with_index do |num| 
+    if num.odd?  
+      emptyarr << num
+    end
+  end
+  yield(emptyarr)
+  
+  hash=names.keep_if do |name| 
+    name.length>4    
+  end
+  yield(hash)
+end
