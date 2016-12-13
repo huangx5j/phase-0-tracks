@@ -40,3 +40,17 @@ def deleted
 end
 
 deleted {|val| puts "After element deleting: #{val}"}
+
+#method that filters a data structure for only items that do satisfy a certain condition
+def filter1
+  values=[1,3,4,5,6,7,8]
+  names={bob:"miller", ben:"smith", billy:"anderson"}
+  puts "Before array element deleting: #{values}"
+  puts "Before hash element deleting: #{names}"
+  arr=values.select {|num| num<5}
+  yield(arr)
+  hash=names.select {|name| name.length<5}
+  yield(hash)
+end
+
+filter1 {|val| puts "After filtering: #{val}"}
