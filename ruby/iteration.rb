@@ -26,3 +26,17 @@ hash1.map do |k, v|
   puts "Before modification: #{v}"
   puts "After modification: #{"%#{v}%"}"
 end
+
+#method that iterates through the items, deleting any that meet a certain condition
+def deleted
+  values=[1,3,4,5,6,7,8]
+  names={bob:"miller", ben:"smith", billy:"anderson"}
+  puts "Before array element deleting: #{values}"
+  puts "Before hash element deleting: #{names}"
+  arr=values.delete_if {|num| num<5}
+  yield(arr)
+  hash=names.delete_if {|name| name.length<4}
+  yield(hash)
+end
+
+deleted {|val| puts "After element deleting: #{val}"}
