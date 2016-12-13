@@ -75,3 +75,21 @@ def filter2
   end
   yield(hash)
 end
+
+filter2 {|val| puts "After filtering: #{val}"}
+
+#method that will remove items from a data structure until the condition in the block evaluates to false
+def remove
+  values=[1,2,4,5,6,7,8]
+  names={bob:"miller", ben:"smith", billy:"anderson", bill:"nye"}
+  puts "Before array element deleting: #{values}"
+  puts "Before hash element deleting: #{names}"
+  
+  numbers=values.drop_while {|num| num < 6}
+  yield(numbers)
+  
+  hash=names.drop_while {|k,v| k.length<4}
+  yield(hash)
+end
+
+remove {|val| puts "After filtering: #{val}"}
