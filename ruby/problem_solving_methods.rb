@@ -21,7 +21,7 @@ end
 
 puts search([42, 89, 23, 0], 1) 
 
-#Method to your file that takes a number of Fibonacci terms to generate and returns an array of the terms
+#Method that takes a number of Fibonacci terms to generate and returns an array of the terms
 def fibonacci(n) 
   arr = [0]
   n.times do |i|
@@ -34,7 +34,41 @@ def fibonacci(n)
     end  
   end
 
-  return arr
+  return arr #Returns array of numbers
+  #Driver code that returns last number of array
+  #return arr[n-1]
 end
 
-print fibonacci(6) #=>[0,1,1,2,3,5]
+p fibonacci(6) #=>[0,1,1,2,3,5]
+
+#Bubble sort psuedocode
+#Given an array create 3 placeholders varuables
+#One variable for current index, one for next index, and one temp
+#Loop through array until end of array length
+#Compare current index to next index
+#Stores current index into placeholder
+#Swap value of current index with value of next index if the current index is greater than the next index
+#Swap value of next index with value of placeholder
+#Loop ends when no current index is greater than next index
+#Returns sorted array
+def bubble_sort(arr)
+  temp = 0
+
+  arr.each do |i|
+    i = 0
+    j = 1
+    while (j < arr.length)
+      if arr[i] > arr[j] #Compare current index to next index
+        temp = arr[i] #Stores current index into placeholder
+        arr[i] = arr[j] #Swap value of current index with value of next index
+        arr[j] = temp #Swap value of next index with value of placeholder
+        #p arr #For debugging: shows each iteration and swap
+      end
+    i+=1
+    j+=1
+    end
+  end  
+ return arr
+end
+
+p bubble_sort([6, 3, 5, 3, 2, 9])
