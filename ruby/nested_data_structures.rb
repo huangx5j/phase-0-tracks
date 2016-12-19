@@ -15,3 +15,12 @@ code_school = {name: "Devbootcamp",
 	}
 }
 
+#Change Houston location to Miami
+code_school[:classroom][:location][1] = "Miami"
+p code_school[:classroom][:location]
+
+#Print out list of teachers
+code_school[:classroom][:teachers].each {|teacher| puts "The teachers are #{teacher}"}
+
+#Print out different student levels
+code_school[:classroom][:students][:level].each {|levels| puts "One student level is #{levels}"}
