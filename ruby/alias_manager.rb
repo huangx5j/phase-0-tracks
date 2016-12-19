@@ -34,3 +34,24 @@ def printing(list)
 	end 
 end
 
+#Questions to ask user
+print "You will be asked to enter your full name to create an alias.\n"
+print "'Enter' for another alias and type 'quit' when done.\n"
+print "Please enter your first and last name:\n"
+
+spy_name = ''
+#Empty hash to contain all modified spy names
+stored = {}
+	until spy_name == "quit"
+	spy_name = gets.chomp
+		if spy_name == "quit"
+			break
+		else
+			alias_name = fakename(spy_name)
+		end
+		stored[spy_name]= alias_name
+	end
+
+printing(stored)
+
+#End program
