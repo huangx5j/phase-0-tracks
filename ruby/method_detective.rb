@@ -5,15 +5,19 @@
 # committed the crime, add additional calls to prove it.
 
 "iNvEsTiGaTiOn".swapcase
+"iNvEsTiGaTiOn".replace("InVeStIgAtIoN")
 # => “InVeStIgAtIoN”
 
 "zom".insert(1,'o')
+"zom".replace("zoom")
 # => “zoom”
 
 "enhance".center(15)
+"enhance".replace("    enhance    ")
 # => "    enhance    "
 
 "Stop! You’re under arrest!".upcase
+"Stop! You’re under arrest!".replace("STOP! YOU’RE UNDER ARREST!")
 # => "STOP! YOU’RE UNDER ARREST!"
 
 "the usual".insert(9," suspects")
@@ -36,6 +40,7 @@
 # => "he mystery of the missing first letter"
 
 "Elementary,    my   dear        Watson!".squeeze
+"Elementary,    my   dear        Watson!".replace("Elementary, my dear Watson!")
 # => "Elementary, my dear Watson!"
 
 "z".ord
