@@ -1,4 +1,6 @@
 class Santa
+	attr_reader : ethinicity, : gender
+	attr_accessor :age
 
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!"
@@ -9,22 +11,13 @@ class Santa
 	end
 
 	def initialize(gender, ethnicity)
-		# puts "Initializing Santa instance ..."
+		puts "Initializing Santa instance ..."
 		@gender = gender
 		@ethnicity = ethnicity
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		@age = 0
 	end
  
-	# Getter methods for attributes
-	def age
-		@age
-	end
-
-	def ethnicity
-		@ethnicity
-	end
-
 	# Setter methods
 	def celebrate_birthday
 		@age +=1
@@ -56,5 +49,10 @@ end
 # end
 
 # Release 2 driver code
-puts "Santa is age #{santa.age} and #{santa.ethnicity}"
-puts "New ranking is #{reindeer_ranking}""
+# puts "Santa is age #{santa.age} and #{santa.ethnicity}"
+# puts "New ranking is #{reindeer_ranking}"
+
+# Release 3 driver code
+# puts "Santa is age #{santa.age} and #{santa.ethnicity}"
+
+# Release 4 driver code
