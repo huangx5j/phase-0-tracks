@@ -1,21 +1,22 @@
 class Santa
-	attr_reader : ethinicity, : gender
-	attr_accessor :age
+	attr_reader :ethinicity, :gender
+	attr_accessor :age, :cookies
 
 	def speak
 		puts "Ho, ho, ho! Haaaappy holidays!"
 	end
 
 	def eat_milk_and_cookies(cookie)
-		puts "That was a good #{cookie}!"
+		puts "#{@name} said that was a good #{cookie}!"
 	end
 
-	def initialize(gender, ethnicity)
+	def initialize(gender, ethnicity, cookies)
 		puts "Initializing Santa instance ..."
 		@gender = gender
 		@ethnicity = ethnicity
 		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-		@age = 0
+		@age = rand(0..140)
+		@cookies = cookies
 	end
  
 	# Setter methods
@@ -27,6 +28,10 @@ class Santa
 		@reindeer_ranking.delete(name)
 		@reindeer_ranking << name
 
+	end
+
+	def about
+		puts "This is a #{@age} year old #{gender} #{@ethnicity} Santa that loves #{cookies} cookies."
 	end
 end
 
@@ -56,3 +61,16 @@ end
 # puts "Santa is age #{santa.age} and #{santa.ethnicity}"
 
 # Release 4 driver code
+santas = [ ]
+# Using shuffle to randomize an array instead of .sample
+genders = ["female", "male", "bisexual", "asexual"].shuffle
+ethnicities = ["Asian", "White", "Black", "European", "Other"].shuffle
+cookies = ["butterscotch", "almond", "nutty", "mint", "regular"].shuffle
+
+cookies.length.times do |i|
+  santas << Santa.new(genders[i], ethnicities[i], cookies[i])
+end
+
+santas.each do |list|
+	list.about
+end
