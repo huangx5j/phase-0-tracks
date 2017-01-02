@@ -1,3 +1,5 @@
+#Define simple class called Puppy
+
 class Puppy
 
 	duchess = Puppy.new
