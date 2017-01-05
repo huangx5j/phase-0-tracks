@@ -1,11 +1,19 @@
+// 7.2 Pairing
+// Joseph Huang
+// Hussein Maad
+
+// Creating two arrays
 var colors = ["red", "blue", "green", "yellow"]
 var names = ["Bill", "Ed", "Mack", "Ned"]
 
+// Adding to the arrays
 colors.push("pink");
 names.push("Chad");
 
+// Creating emtpy hash
 var horse = {} ;
 
+// Looping through colors and names arrays as key value pairs into horse
 for (var k=0; k < names.length; k++)
 {
 	horse[names[k]] = colors[k]
@@ -15,6 +23,7 @@ console.log(horse)
 
 console.log("----------------------")
 
+// Constructor function to create many cars
 function Car(model,year,color)
 {
 	this.model = model;
