@@ -79,3 +79,8 @@ console.log(compare({name: "Steven", age: 54},{name: "Janet", age: 64}));
 console.log(compare({car: "Toyota", year: 2011},{name: "Chen", age: 30}));
 
 console.log(newWords(3));
+for (var i = 0; i < 10; i++ ) {
+	var list = newWords(4);
+	console.log(list);
+	console.log("The longest word is " + longestWord(list));
+}
