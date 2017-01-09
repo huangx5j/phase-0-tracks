@@ -7,7 +7,19 @@
 // Input: array of words
 // Output: longest word in the array
 
+var words = ["long phrase","longest phrase","longer phrase"]
 
+function longestWord(arr) {
+	var temp = 0;
+	var word = "";
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i].length > temp) {
+			temp = arr[i].length;
+			word = arr[i]
+		}
+	} 
+	return word;
+}
 
-
-
+// Driver code
+console.log(longestWord(words));
