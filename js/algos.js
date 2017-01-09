@@ -47,6 +47,29 @@ function compare(obj1, obj2) {
 	return false;
 }
 
+// Release 2
+// A function that takes an integer for length, and 
+// builds and returns an array of strings of the 
+// given length.
+// Input: integer
+// Steps: Create empty array to store words.
+// Create empty string to hold letters.
+// Create words of random length and add to array.
+// Output: Array of strings
+
+function newWords(num) {
+	var list = [];
+	for (var n = 0; n < num; n++){
+	  var word = "";
+	  var letters = "abcdefghijklmnopqrstuvwxyz";
+	  var wordLength = Math.floor(Math.random() * (10 - 1)) + 1;
+	  for( var i = 0; i < wordLength; i++){
+	      word += letters.charAt(Math.floor(Math.random() * letters.length));
+	  }
+	list.push(word);
+	}
+	return list;
+}
 
 
 // Driver code
@@ -54,3 +77,5 @@ console.log(longestWord(words));
 
 console.log(compare({name: "Steven", age: 54},{name: "Janet", age: 64}));
 console.log(compare({car: "Toyota", year: 2011},{name: "Chen", age: 30}));
+
+console.log(newWords(3));
