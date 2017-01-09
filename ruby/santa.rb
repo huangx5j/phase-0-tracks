@@ -1,76 +1,74 @@
-class Santa
-	attr_reader :ethinicity, :gender
-	attr_accessor :age, :cookies
+class Spaceship
+	attr_reader :speed
+	attr_accessor :name, :shield, :location
 
-	def speak
-		puts "Ho, ho, ho! Haaaappy holidays!"
+	def initialize(name, speed, shield)
+		@name = name
+		@speed = speed
+		@shield = shield
+		@location = "earth"
+    @inventory = {}
+		
+		puts "#{name} has a max speed of #{speed} miles per hour"
 	end
 
-	def eat_milk_and_cookies(cookie)
-		puts "#{@name} said that was a good #{cookie}!"
-	end
-
-	def initialize(gender, ethnicity, cookies)
-		puts "Initializing Santa instance ..."
-		@gender = gender
-		@ethnicity = ethnicity
-		@reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-		@age = rand(0..140)
-		@cookies = cookies
-	end
- 
-	# Setter methods
-	def celebrate_birthday
-		@age +=1
-	end
-
-	def get_mad_at(name)
-		@reindeer_ranking.delete(name)
-		@reindeer_ranking << name
-
-	end
-
-	def about
-		puts "This is a #{@age} year old #{gender} #{@ethnicity} Santa that loves #{cookies} cookies."
-	end
+  def enable_shield
+    @shield = "on"
+    puts "Shield is #{@shield}"
+  end
+  
+  def disable_shield
+    @shield = "off"
+    puts "Shield is #{@shield}"
+  end
+  
+  def warp_to(location)
+    puts "Traveling at #{speed} miles per hour to #{location}"
+    @location = location
+  end
+  
+  def tractor_beam(item)
+    weight = 0
+    adding = item.split("")
+    adding.each do |i|
+      weight = weight + i.ord
+    end
+    if weight < 500
+      disable_shield
+      @inventory[item] = @location
+      puts "The ship now has #{@inventory}"
+      enable_shield
+      return true
+    else
+      puts "Item is too heavy"
+      return false
+    end
+  end
+  
+  def pick_up(item, dest) 
+    warp_to(dest)
+    tractor_beam(item)
+  end
+  
 end
+# Driver code
+spacey1 = Spaceship.new("USS Enterprise", "200,000", "off")
+spacey2 = Spaceship.new("HMS Andromeda", "108,277", "on")
+puts "\n"
 
-# Release 0 driver code
-# santa= Santa.new
-# santa.eat_milk_and_cookies("snickerdoodle")
+# puts "#{spacey1.name} has a max speed of #{spacey1.speed} miles per hour."
+# puts "#{spacey2.name} has a max speed of #{spacey2.speed} miles per hour."
 
-# Release 1 driver code
-# santas = []
-# genders = ["female", "male", "bisexual", "asexual"]
-# ethnicities = ["Asian", "White", "Black", "European", "Other"]
+# puts "#{spacey1.name} has its shields #{spacey1.enable_shield}"
+# puts "#{spacey2.name} has its shields #{spacey2.disable_shield}"
 
-# genders.length.times do |i|
-# 	santas << Santa.new(genders[i], ethnicities[i])
-# end
+# spacey1.warp_to("Mars")
+# spacey1.warp_to("Venus")
 
-# puts "Testing each Santa instance"
-# santas.each do |speaker|
-#   speaker.speak
-# end
+# spacey1.tractor_beam("cow")
 
-# Release 2 driver code
-# puts "Santa is age #{santa.age} and #{santa.ethnicity}"
-# puts "New ranking is #{reindeer_ranking}"
-
-# Release 3 driver code
-# puts "Santa is age #{santa.age} and #{santa.ethnicity}"
-
-# Release 4 driver code
-santas = [ ]
-# Using shuffle to randomize an array instead of .sample
-genders = ["female", "male", "bisexual", "asexual"].shuffle
-ethnicities = ["Asian", "White", "Black", "European", "Other"].shuffle
-cookies = ["butterscotch", "almond", "nutty", "mint", "regular"].shuffle
-
-cookies.length.times do |i|
-  santas << Santa.new(genders[i], ethnicities[i], cookies[i])
-end
-
-santas.each do |list|
-	list.about
-end
+spacey2.pick_up("cow", "Santurn")
+spacey2.pick_up("sailboat", "Mars")
+puts "\n"
+spacey1.pick_up("sailboat", "Pluto")
+spacey1.pick_up("tree", "Moon")
