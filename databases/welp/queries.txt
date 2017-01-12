@@ -1,3 +1,7 @@
+# 8.4 Pairing
+# Joseph Huang
+# Jack Loftus
+
 # Join all 3 tables with all data
 SELECT * FROM businesses, users, reviews WHERE businesses.id = reviews.business_id & users.id = reviews.user_id;
 
