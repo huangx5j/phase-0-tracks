@@ -1,0 +1,42 @@
+#Display the information in one table
+sqlite> SELECT * FROM cars
+   ...> ;
+1|Toyota|2011
+2|Ford|2013
+3|Chevy|2015
+
+#Update an item that meets some condition
+sqlite> UPDATE cars SET year=2012 WHERE model="Toyota";
+sqlite> SELECT * FROM cars;
+1|Toyota|2012
+2|Ford|2013
+3|Chevy|2015
+sqlite>
+
+#Display the information in both tables using one query
+sqlite> SELECT * FROM drivers, cars WHERE drivers.car_id = cars.id;
+1|Billy|Bob|1|1|Toyota|2012
+2|Chen|Charlie|2|2|Ford|2013
+3|Den|Dan|3|3|Chevy|2015
+
+
+#Display a narrower selection of columns
+sqlite> SELECT drivers.lastname, drivers.firstname FROM drivers JOIN cars ON dri
+vers.car_id = cars.id;
+Billy|Bob
+Chen|Charlie
+Den|Dan
+
+
+#Delete an item that meets some condition
+sqlite>DELETE FROM drivers WHERE lastname="Chen";
+
+#Other join syntax
+sqlite> SELECT drivers.id, drivers.lastname FROM drivers, cars ON drivers.car_id
+=cars.id WHERE drivers.firstname="Dan";
+2|Den
+
+sqlite> SELECT drivers.id, drivers.firstname FROM drivers INNER JOIN cars ON dri
+vers.car_id=cars.id;
+1|Bob
+2|Dan
